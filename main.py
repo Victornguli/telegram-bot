@@ -22,7 +22,7 @@ def bop(bot, update):
 	print(chat_id)
 
 def main():
-	updater = Updater('526631934:AAGBaf8bGl0jgV8xqCA0rixnjvKssxABlVA')
+	updater = Updater('token') #Telegram API Token
 	dp = updater.dispatcher
 	dp.add_handler(CommandHandler('start',bop))
 	dp.add_handler(CommandHandler("bop",bop))
