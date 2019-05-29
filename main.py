@@ -15,16 +15,17 @@ def get_image_url():
 		file_extension = re.search("([^.]*)$",url).group(1).lower()
 	return url
 
-
 def bop(bot, update):
 	url = get_image_url()
 	chat_id = update.message.chat_id
 	bot.send_photo(chat_id=chat_id, photo=url)
+	print(chat_id)
 
 def main():
 	updater = Updater('526631934:AAGBaf8bGl0jgV8xqCA0rixnjvKssxABlVA')
 	dp = updater.dispatcher
-	dp.add_handler(CommandHandler('bop',bop))
+	dp.add_handler(CommandHandler('start',bop))
+	dp.add_handler(CommandHandler("bop",bop))
 	updater.start_polling()
 	updater.idle()
 
