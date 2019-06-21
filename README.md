@@ -1,4 +1,4 @@
-# Telegram bot for daily cute dog pics
+# Telegram bot for cute dog and cat pics on demand
 
 
 #### Instructions
