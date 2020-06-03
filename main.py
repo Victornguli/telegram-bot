@@ -1,6 +1,8 @@
-from telegram.ext import Updater, InlineQueryHandler, CommandHandler
+import os
 import requests
 import re
+from telegram.ext import Updater, InlineQueryHandler, CommandHandler
+
 
 def get_dog_url():
 	contents = requests.get('https://random.dog/woof.json').json()
@@ -33,7 +35,8 @@ def cat(bot, update):
 	
 
 def main():
-	updater = Updater('526631934:AAGBaf8bGl0jgV8xqCA0rixnjvKssxABlVA') #Telegram API Token
+	token = os.environ('TELEGRAM_API_TOKEN')
+	updater = Updater(token) #Telegram API Token
 	dp = updater.dispatcher
 	dp.add_handler(CommandHandler('start',bop))
 	dp.add_handler(CommandHandler('dog',bop))
